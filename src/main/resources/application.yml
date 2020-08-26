@@ -1,0 +1,20 @@
+server:
+  port: 9292
+  servlet:
+    context-path: /phoneBook
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    password: abc_123
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+    username: PHNBK_LOCAL
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+        show_sql: true
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
