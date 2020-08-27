@@ -34,7 +34,9 @@
 </script>
 </head>
 <body bgcolor="#59ce8f">
+	
 	<h2 align = 'center'><font color='red'>Contacts Information</font></h2>
+	
 	<a href="addContact">+Add New Contact</a>
 	<table class="center" border="1" id="contactTbl">
 		<thead>

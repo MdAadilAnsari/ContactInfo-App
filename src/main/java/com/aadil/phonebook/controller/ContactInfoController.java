@@ -44,18 +44,20 @@ public class ContactInfoController {
 	 * @return String
 	 */
 	@RequestMapping(value = "/saveContact",method = RequestMethod.POST)
-	public String handleSubmitBtn(@ModelAttribute("contact") ContactDtls c, RedirectAttributes attributes,
+	public String handleSubmitBtn(@ModelAttribute("contact") ContactDtls c, 
+			RedirectAttributes attribute,
 			Model model) {
 		Boolean isSaved = contactService.saveContactDtls(c);
 		logger.info("Contacts Dtls Form submited:: " + c);
 		if (isSaved) {
-			attributes.addFlashAttribute("successMsg", "Contact Saved");
+			attribute.addFlashAttribute("successMsg", "Contact Saved Successfully");
 		} else {
-			attributes.addFlashAttribute("errMsg", "Failed To Save Contact!!");
+			attribute.addFlashAttribute("errMsg", "Failed To Save Contact!!");
 		}
-		return "redirect:/contactSavedSuccess";
+		return "redirect:/contactSavedSuccess" ;
 	}
 
+	
 	@RequestMapping(value = "/contactSavedSuccess", method = RequestMethod.GET)
 	public String contactSavedSuccess(Model model) {
 		logger.info("contactSavedSuccess() method called..");
@@ -63,6 +65,7 @@ public class ContactInfoController {
 		return "contactInfo";
 
 	}
+	 
 
 	/**
 	 * This method is used to get all ContactsDtls from Database

@@ -16,7 +16,7 @@ public class ViewContactsController {
 	@Autowired
 	private ContactService contactService;
 
-	@GetMapping(value = "/editContact")
+	@RequestMapping(value = "/editContact")
 	public String editContact(@RequestParam("cid") Integer contactId, Model model) {
 		ContactDtls c = contactService.getContactById(contactId);
 		model.addAttribute("contact", c);

@@ -22,32 +22,42 @@
 	</p>
 	
 	<p>
-		<font color='red'>${errMsg}</font>
+		<h2><font color='green'>${msg}</font></h2>
+	</p>
+	<p>
+		<h2><font color='red'>${errMsg}</font></h2>
+	</p>
+	
+	<p>
+		<h2><font color='red'>${errMsg}</font></h2>
 	</p>
 	<div class="container">
-	<form:form action="saveContact" name = "saveContact" modelAttribute="contact" method="POST">
+	<form:form action="saveContact" name="saveContact" modelAttribute="contact" method="POST">
 
 		<!-- <table>
 			<tr> -->
 				<form:hidden path="contactId"/>
+				
 				<form:label path="contactName">Contact Name</form:label>
-				<input type="text" name="contactName" id="contactName" placeholder="Smith"/>
+				<form:input path="contactName" id="contactName"/>
 				
 				<form:label path="contactEmail">Contact E-mail</form:label>
-				<input type="text" name="contactEmail" id="email" placeholder="smith@deo.com"/>
+				<form:input path="contactEmail" id="contactEmail"/>
+				
 				<form:label path="contactNumber">Contact Number</form:label>
-				<input type="text" name="contactNumber" id="MobileNo" placeholder="9142354567"/>
+				<form:input path="contactNumber" id="contactNumber"/>
+				
 				<%-- <td>Contact Name :</td>
-				<td><form:input path="contactName" /></td> --%>
-			<!-- </tr>
+				<td><form:input path="contactName" /></td>
+			</tr>
 
-			<%-- <tr> -->
-				<!-- <td>Contact Email :</td> -->
+			<tr>
+				<td>Contact Email :</td>
 				<td><form:input path="contactEmail" /></td>
-			<!-- </tr>
- --%>
-			<tr> -->
-				<%-- <td>Contact Number :</td>
+			</tr>
+
+			<tr>
+				<td>Contact Number :</td>
 				<td><form:input path="contactNumber" /></td>
 			</tr>
 
